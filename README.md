@@ -6,7 +6,7 @@
 
 <h2>Instalação</h2>
 
-1. git clone https://github.com/mgcg12/cwb-erp
+1. git clone https://github.com/mgcg12/cwb-erp22
 2. npm install
 3. node app.js
 

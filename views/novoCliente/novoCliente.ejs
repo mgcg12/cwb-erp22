@@ -1,0 +1,94 @@
+<% include ../partials/header %>
+<h2 class="text-center mt-5 mt-sm-3">Cadastrar novo cliente</h2>
+<div class="container">
+	<hr>
+	<form class="mt-5 row" action="/cliente/new" method="POST">
+		<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+			<h3 class="text-center mb-4 mt-2">Dados cadastrais</h3>
+			<div class="my-2 w-75 ml-auto mr-auto">
+				<input type="email" name="email" class="form-control" placeholder="Email" required>	
+			</div>
+			<div class="my-2 w-75 ml-auto mr-auto">
+				<input type="text" name="cpfcnpj" class="form-control" placeholder="CPF/CNPJ" required>	
+			</div>
+			<div class="my-2 w-75 ml-auto mr-auto">
+				<input type="text" name="nome" class="form-control" placeholder="Nome" required>	
+			</div>
+			<div class="my-2 w-75 ml-auto mr-auto">
+				<input type="text" name="sobrenome" class="form-control" placeholder="Sobrenome" required>	
+			</div>
+			<div class="my-2 w-75 ml-auto mr-auto">
+				<input type="text" name="celular" class="form-control" placeholder="Celular" required>	
+			</div>
+			<div class="my-2 w-75 ml-auto mr-auto">
+				<input type="text" name="telefone" class="form-control" placeholder="Telefone fixo" required>	
+			</div>
+			<div class="my-2 w-75 ml-auto mr-auto">
+				<select name="segmento" class="form-control" placeholder="Selecione o grupo de cliente" required>
+					<option disabled selected class="d-none">Selecione o segmento</option>
+					<% segmentos.forEach(segmento=>{ %>
+						<option value="<%= segmento._id %>"><%= segmento.nome %></option>
+					<% }); %>
+				</select>
+			</div>
+		</div>
+		<div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+			<h3 class="text-center mb-4 mt-2">Endereço</h3>
+			<div class="my-2 w-75 ml-auto mr-auto">
+				<input type="text" name="cep" class="form-control" placeholder="CEP" required>	
+			</div>
+			<div class="my-2 w-75 ml-auto mr-auto">
+				<input type="text" name="rua" class="form-control" placeholder="Rua" required>	
+			</div>
+			<div class="my-2 w-75 ml-auto mr-auto">
+				<input type="text" name="numero" class="form-control" placeholder="Número" required>	
+			</div>
+			<div class="my-2 w-75 ml-auto mr-auto">
+				<input type="text" name="complemento" class="form-control" placeholder="Complemento">	
+			</div>
+			<div class="my-2 w-75 ml-auto mr-auto">
+				<input type="text" name="bairro" class="form-control" placeholder="Bairro">	
+			</div>
+			<div class="my-2 w-75 ml-auto mr-auto">
+				<input type="text" name="cidade" class="form-control" placeholder="Cidade" required>	
+			</div>
+			<div class="my-2 w-75 ml-auto mr-auto">
+				<select name="estado" class="form-control" placeholder="Estado" required>
+					<option value="Não selecionado">Selecione o estado</option>
+					<option value="AC">Acre</option>
+					<option value="AL">Alagoas</option>
+					<option value="AP">Amapá</option>
+					<option value="AM">Amazonas</option>
+					<option value="BA">Bahia</option>
+					<option value="CE">Ceará</option>
+					<option value="DF">Distrito Federal</option>
+					<option value="ES">Espírito Santo</option>
+					<option value="GO">Goiás</option>
+					<option value="MA">Maranhão</option>
+					<option value="MT">Mato Grosso</option>
+					<option value="MS">Mato Grosso do Sul</option>
+					<option value="MG">Minas Gerais</option>
+					<option value="PA">Pará</option>
+					<option value="PB">Paraíba</option>
+					<option value="PR">Paraná</option>
+					<option value="PE">Pernambuco</option>
+					<option value="PI">Piauí</option>
+					<option value="RJ">Rio de Janeiro</option>
+					<option value="RN">Rio Grande do Norte</option>
+					<option value="RS">Rio Grande do Sul</option>
+					<option value="RO">Rondônia</option>
+					<option value="RR">Roraima</option>
+					<option value="SC">Santa Catarina</option>
+					<option value="SP">São Paulo</option>
+					<option value="SE">Sergipe</option>
+					<option value="TO">Tocantins</option>
+				</select>
+			</div>
+		</div>
+		<div class="my-2 text-center ml-auto mr-auto">
+			<a href="/cliente" class="btn btn-success mr-3">Voltar</a>
+			<input type="submit" name="Enviar" value="Enviar" class="btn btn-warning ml-auto mr-auto">
+		</div>
+	</form>
+</div>
+<% include ../partials/footer %>

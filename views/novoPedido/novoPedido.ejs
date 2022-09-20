@@ -1,0 +1,85 @@
+<% include ../partials/header %>
+<h2 class="text-center mt-5 mt-sm-3">Criar pedido</h2>
+<% var data = new Date; %>
+<div class="container">
+	<hr>
+	<form action="/pedido/new" method="post">
+		<script type="text/javascript">
+			setTimeout(()=>{
+				var date = new Date();
+				document.querySelector('#dataPedido').value = date.toLocaleString('pt-BR');
+				document.querySelector('#mesNome').value = date.getMonthName();
+			},100);
+		</script>
+		<input type="hidden" id="dataPedido" name="pedido[dataPedido]" value="" / >
+		<input type="hidden" name="pedido[data.mes.numero]" value="<%= data.getMonth() %>" />
+		<input id="mesNome" type="hidden" name="pedido[data.mes.nome]" />
+		<input type="hidden" name="pedido[data.ano]" value="<%= data.getUTCFullYear() %>" />
+		<input type="hidden" name="pedido[data.dia]" value="<%= data.getUTCDate() %>" />
+		<input type="hidden" name="pedido[status._id]" value="1" />
+		<input type="hidden" name="pedido[pedidoId]" value="0" />
+		<div class="row mt-4">
+			<div class="col-12 col-md-4">
+				<p class="lead text-center">Selecione abaixo o cliente</p>
+				<select id="clientId" class="form-control client-select" name="pedido[cliente._id]">
+					<option>Clientes</option>
+				<% clientes.forEach(cliente => { %>
+					<option class="<%= cliente.nome %> <%= cliente.sobrenome %>" value="<%= cliente._id %>"><%= cliente.nome %> <%= cliente.sobrenome %></option>
+				<% }) %>
+				</select>
+				<input id="clientName" type="hidden" name="pedido[cliente.nome]">
+				<script type="text/javascript">
+					document.getElementById('clientId').addEventListener('change', ()=>{
+						document.getElementById('clientName').value = document.getElementById('clientId').selectedOptions[0].innerHTML;
+					});
+				</script>
+				<div class="formaspagamento mt-4">
+					<p class="lead text-center">Selecione abaixo a forma de pagamento</p>
+					<select id="paymentId" class="form-control pagamento-select" name="pedido[pagamento.forma]">
+						<option>Formas de pagamento</option>
+						<option value="boleto">Boleto</option>
+						<option value="deposito">Depósito</option>
+						<option value="cartaocredito">Cartão de crédito</option>
+						<option value="cartaodebito">Cartão de débito</option>
+						<option value="dinheiro">Dinheiro</option>
+					</select>
+					<input id="paymentName" type="hidden" name="pedido[pagamento.nome]">
+					<script type="text/javascript">
+						document.getElementById('paymentId').addEventListener('change', ()=>{
+							document.getElementById('paymentName').value = document.getElementById('paymentId').selectedOptions[0].innerHTML;
+						});
+					</script>
+				</div>
+			</div>
+			<div class="col-12 col-md-8">
+				<p class="lead text-center">Selecione abaixo os produtos do pedido</p>
+				<div class="p-2 produtospedido">
+					<% for (var i = 0; i < produtos.length; i++) { %>
+						<div class="form-check">
+							  <label class="form-check-label w-100 row divproduto<%= i+1 %>">
+							  	<div class="col-5 d-inline">
+							  		<input class="form-check-input produto<%= i+1 %>" type="checkbox" name="produtos[<%= i+1 %>][_id]" value="<%= produtos[i].nomeProduto %>" />
+							    <%= produtos[i].nomeProduto %>
+							    	<span class="d-none idproduto<%= i+1 %>"><input type="text" name="produtos[<%= i+1 %>][idOficial]" value="<%= produtos[i]._id %>"></span>
+							  	</div>
+							  	<div class="col-4 d-inline">
+							  		<p class="d-inline m-0">Preço: R$ <input style="width: 100px" class="produtospedido pl-2" type="text" name="produtos[<%= i+1 %>][precoVenda]" value="<%= produtos[i].precoVenda %>"" placeholder="<%= produtos[i].precoVenda %>"></p>
+							  		<input style="" class="" type="hidden" name="produtos[<%= i+1 %>][precoCusto]" value="<%= produtos[i].precoCusto %>">
+							  	</div>
+							  	<div class="col-3 d-inline">
+							  		<p class="d-inline m-0">Quantidade: <input style="width: 50px" class="produtospedido pl-2" type="number" name="produtos[<%= i+1 %>][quantidade]" /></p>
+							  	</div>
+							  	
+							  </label>
+						</div>
+					<% } %>
+				</div>
+			</div>
+		</div>
+		<div class="my-2 text-center ml-auto mr-auto">
+			<a href="/pedido" class="btn btn-success mr-3">Voltar</a>
+			<input type="submit" name="Enviar" value="Enviar" class="btn btn-warning ml-auto mr-auto">
+		</div>
+	</form>
+</div>
+<% include ../partials/footer %>

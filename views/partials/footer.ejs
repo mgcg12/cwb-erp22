@@ -1,0 +1,40 @@
+</div>
+<footer class="container-fluid bg-light mt-5 fixed-footer light-drop-shadow2 d-none d-md-block">
+	<li class="clock" id="date"></li>
+	<script type="text/javascript">
+		setTimeout(()=>{
+		var date = new Date;
+		document.querySelector('#date').innerHTML = date.toLocaleString('pt-BR');
+		date = new Date;
+		},100);
+	</script>
+	<div class="row">
+		<div class="col-12">
+			<p class="text-center m-0 p-2 poiret-600">DEO v1 @ 2017 Doglab Creations</p>
+		</div>
+	</div>
+</footer>	
+<style type="text/css">
+	.fixed-footer{
+	    position: fixed;
+	    bottom: 0;
+	}
+</style>
+<script type="text/javascript">
+	$('.dropdown2').hover(function(){ 
+	  $('.dropdown-toggle', this).trigger('click'); 
+	});
+	function disableEmptyInputs(form) {
+	  var controls = form.elements;
+	  for (var i=0, iLen=controls.length; i<iLen; i++) {
+	    controls[i].disabled = controls[i].value == '';
+	  }
+	}
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+
+	var data = new Date;
+</script>
+</body>
+</html>

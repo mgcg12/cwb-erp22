@@ -1,0 +1,177 @@
+body{
+    padding-bottom: 70px;
+}
+input {
+    transition: all 0.5s;
+}
+a {
+    color: #212529;
+    transition: all 0.5s;
+}
+a:hover {
+    color: #212529;
+    /*filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.4));*/
+}
+.logo{
+	filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.7))
+}
+.clientes-view{
+    border: 1px solid rgba(52, 52, 52, 0.3);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    background-color: #f2f2f2;
+    filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.3));
+}
+.attr {
+    background-color: #7f9ebc;
+    border-radius: 5px;
+    padding: 0px 5px 3px 5px;
+    margin: 5px 5px 5px 0;
+    display: inline-block;
+}
+.attr2 {
+    background-color: #7f9ebc47;
+    border-radius: 5px;
+    padding: 0px 10px 3px 10px;
+    margin: 0px 20px 10px 0;
+    display: inline-block;
+}
+.header-fixo{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+li {
+    font-family: 'Poiret One', cursive;
+    font-weight: 600;
+    font-size: 1.2em;
+}
+.poiret{
+    font-family: 'Poiret One', cursive !important;
+}
+.poiret-600{
+    font-weight: 600;
+    font-family: 'Poiret One', cursive !important;
+}
+
+.truncate {
+  width: 100%;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#date {
+    position: fixed;
+    bottom: 10px;
+    list-style: none;
+    font-size: 0.9em;
+    right: 15px;
+}
+.qtdeprods{
+    font-family: 'Poiret One', cursive !important;
+    font-weight: 600;
+    position: fixed;
+    bottom: -6.5px;
+    list-style: none;
+    font-size: 1em;
+    left: 15px;
+    z-index: 999;
+}
+.produtospedido{
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+.border-grey{
+    border: 1px solid grey;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.dropdown-menu.dropdown-menu-dog.show {
+    left: 50% !important;
+    transform: translate(-50%,-50%) !important;
+    top: 50% !important;
+    /* width: 60%; */
+}
+.light-drop-shadow{
+    filter: drop-shadow(0px 1px 2px rgba(0,0,0,0.2));
+}
+.light-drop-shadow2{
+    filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.2));
+}
+a{
+     text-decoration: none !important;
+}
+.big-on-hover{
+    transition: all 0.5s;
+}
+.big-on-hover:hover{
+    transform: scale(1.5) !important;
+}
+.hide{
+    display: none !important;
+}
+.produtospedido2{
+    width: 100%;
+    
+}
+.mx-15{
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+}
+.statusSelect{
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.z-index-0{
+    z-index: 0 !important;
+}
+.nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+    border-bottom-color: transparent !important;
+}
+.attr3{
+    background-color: #7f9ebc47;
+    border-radius: 5px;
+    margin: 0px 20px 10px 0;
+}
+.pedidostab{
+    background: #f8f9fa;
+    top: 125px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 2px 1px rgba(0, 0, 0,0.2));
+    z-index: 989;
+}
+input.form-control, .input-group .form-control:hover {
+    z-index: 0 !important;
+}
+.input-group-addon input[type=checkbox], .input-group-addon input[type=radio] {
+    width: 20px;
+    height: 20px;
+}
+.dashboard-pedido, .dashboard-cliente,.dashboard-produto {
+    border: 5px solid #3a53c5;
+    border-radius: 5px;
+    background-color: rgba(58, 134, 197, 0.16);
+}
+.dashboard-icon {
+    font-size: 2em !important;
+    color: darkseagreen;
+}
+.dashboard-p{
+    position: relative;
+    bottom: 5px;
+    left: 5px;
+}
+.d-grid{
+    display: grid;
+}
+@media (min-width: 800px){
+    .h-48{
+        height: 48%;
+    }
+}
+.d-inline-table{
+    display: inline-table;
+}

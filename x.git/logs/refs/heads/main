@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 3df6fcd8ba921d5427c1056af210e57f55bfec7e Matheus Grandberg Conrado Giacometti <mathe@a270421.(none)> 1663607351 -0300	clone: from https://git.heroku.com/cwb-erp.git
+3df6fcd8ba921d5427c1056af210e57f55bfec7e 9a3cfd2049ba754ebd7e91cc4d94ce09183d1df2 Matheus <mgcg12@gmail.com> 1663615403 -0300	commit: First commit
+9a3cfd2049ba754ebd7e91cc4d94ce09183d1df2 9a3cfd2049ba754ebd7e91cc4d94ce09183d1df2 Matheus <mgcg12@gmail.com> 1663615632 -0300	Branch: renamed refs/heads/master to refs/heads/main
